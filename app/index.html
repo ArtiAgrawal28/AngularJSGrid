@@ -1,0 +1,43 @@
+<!-- This is home page and gridApp is representing the app/module -->
+<!doctype html>
+<html ng-app="gridApp" >
+  <head>
+    <meta charset="utf-8">
+    <title>AngularJS Grid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="libs/angular.min.js"></script>
+    <!-- main controller -->
+    <script src="js/controller/main.js"></script>
+    <!-- custome directive for grid component -->
+    <script src="js/directive/gridComponent.js"></script>
+    <!-- user define custome service for getting the data for grid -->
+    <script src="js/services/gridService.js"></script>
+  </head>
+  <!-- MainCtrl is contorller for grid -->
+  <body ng-controller="MainCtrl">
+    <div class="rows">
+    <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class='panel-heading-title'>POC on Angular JS with Bootstrap for displaying the 'Employees Grid Data'</h3>
+            <h4 class='user-name'>By: {{user}}</h4>
+          </div>
+          <div class="panel-body" style="overflow-x:auto">
+              <h4>Employees data from {{datasorce}}</h4>
+              <div class='h-bar'></div>
+              <!--
+                 'my-grid-component' is a custom directive for representing grid data. 
+                  emp-details, sort-type and sort-reverse are representing the Isolated scope. 
+                -->
+              <my-grid-component emp-details = "empDetails" sort-type="sortType" sort-reverse ="sortReverse"></my-grid-component>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </body>
+</html>
